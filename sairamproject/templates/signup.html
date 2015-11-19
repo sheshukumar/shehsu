@@ -1,0 +1,57 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2>
+          <span>Angular Material Design</span>
+        </h2>
+        <span flex></span>
+        <a ui-sref="signin" class="md-button md-default-theme" aria-hidden="false"><span class="ng-scope">SignIn</span><div class="md-ripple-container"></div></a>
+        <a ui-sref="signup" class="md-button md-default-theme" aria-hidden="false"><span class="ng-scope">SignUp</span><div class="md-ripple-container"></div></a>
+    </div>
+</md-toolbar>
+<div class="col-xs-12 col-sm-4 col-sm-offset-4 ">
+    <form name="myForm" class="container-fluid" ng-submit="myForm.$valid && submit()" novalidate>
+        <br>
+        <legend>SignUp</legend>
+        <small>You need to fill this form!</small>
+        <div class="row">
+            <div class="col-xs-8">
+                <md-input-container md-is-error="myForm.fname.$invalid && (myForm.$submitted || myForm.fname.$dirty)">
+                    <label>First Name</label>
+                    <input type="text" name="fname" id="name" ng-model="obj.fname" ng-required="true">
+                    <div ng-messages="myForm.fname.$error" ng-if="myForm.$submitted || myForm.fname.$touched">
+                        <div ng-message="required">First Name is required.</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div class="col-xs-8">
+                <md-input-container md-is-error="myForm.lname.$invalid && (myForm.$submitted || myForm.lname.$dirty)">
+                    <label>Last Name</label>
+                    <input type="text" name="lname" id="name" ng-model="obj.lname" ng-required="true">
+                    <div ng-messages="myForm.lname.$error" ng-if="myForm.$submitted || myForm.lname.$touched">
+                        <div ng-message="required">Last Name is required.</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div class="col-xs-8">
+                <md-input-container md-is-error="myForm.email.$invalid && (myForm.$submitted || myForm.email.$dirty)">
+                    <label>Email</label>
+                    <input type="email" name="email" id="name" ng-model="obj.email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-required="true">
+                    <div ng-messages="myForm.email.$error" ng-if="myForm.$submitted || myForm.email.$touched">
+                        <div ng-message="required">Email is required.</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div class="col-xs-8">
+                <md-input-container md-is-error="myForm.password.$invalid && (myForm.$submitted || myForm.password.$dirty)">
+                    <label>Password</label>
+                    <input type="password" name="password" id="name" ng-model="obj.password" ng-required="true">
+                    <div ng-messages="myForm.password.$error" ng-if="myForm.$submitted || myForm.password.$touched">
+                        <div ng-message="required">Password is required.</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </div>
+        <md-button class="md-raised md-warn" type="reset" >RESET</md-button>
+        <md-button class="md-raised md-primary" type="submit" ng-click="signup()" ng-disabled="myForm.$invalid">SUBMIT</md-button>
+    </form>
+</div>

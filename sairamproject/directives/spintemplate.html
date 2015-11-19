@@ -1,0 +1,19 @@
+ <div class="col-xs-12">
+               <form name="form1" class="container-fluid" ng-submit="form1.$valid && submit()" novalidate>
+                  <md-input-container>
+                    <label>Edit Text here</label>
+                    <textarea ng-model="message" columns="1" style="width:100%;height:100%;" required="required"></textarea>
+                  </md-input-container>
+
+             <md-button class="md-raised md-primary" type="submit">Save</md-button>
+             <md-button class="md-raised md-warn">Edit</md-button>
+            </form>
+            <form>
+             <div class="col-xs-4">
+                <md-input-container>
+                    <label>How many copies?</label>
+                    <input type="number" name="text" id="text" ng-model="spin">
+                </md-input-container>
+            </div>
+            </form>
+      </div>

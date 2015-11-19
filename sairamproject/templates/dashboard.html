@@ -1,0 +1,46 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2>
+          <span>Angular Material Design</span>
+        </h2>
+        <span flex></span>
+        <a class="md-button md-default-theme" aria-hidden="false"><span class="ng-scope">Hello, User</span><div class="md-ripple-container"></div></a>
+        <a ui-sref="signin" class="md-button md-default-theme" aria-hidden="false"><span class="ng-scope">Logout</span><div class="md-ripple-container"></div></a>
+    </div>
+</md-toolbar>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <md-content class="md-padding">
+    <md-tabs md-selected="selectedIndex" md-dynamic-height="" md-border-bottom="">
+       <md-tab id="CopyText" class="col-sm-12" aria-controls="CopyText">
+          <md-tab-label>Copy Text</md-tab-label>
+          <md-tab-body>
+              <div header></div>
+              <div copytext></div>  
+          <md-button id="SpinTemplate" class="md-raised md-primary"  ng-click="nextTab()">Generate Spin Template</md-button>
+          </md-tab-body>
+       </md-tab>
+
+       <md-tab id="SpinTemplate" aria-controls="SpinTemplate">
+          <md-tab-label>Spin Template</md-tab-label>
+          <md-tab-body>
+          <div header></div>
+          <div spintemplate></div>
+          <md-button class="md-raised md-primary" ng-click="addSpin(spin,message)">Spin</md-button>
+          </md-tab-body>
+       </md-tab>
+
+       <md-tab id="SpinText" aria-controls="SpinText">
+          <md-tab-label>Spin Text</md-tab-label>
+          <md-tab-body>
+              <div ng-repeat="s in spinArray">
+                     <div header></div>
+                     <div spintext></div>
+              </div>
+         </md-tab-body>
+       </md-tab>
+
+    </md-tabs>
+  </md-content>
+
+</div>
